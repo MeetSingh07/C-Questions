@@ -12,4 +12,4 @@ a.exe
 .vscode/
 
 # Ignore txt files
-.txt
+*.txt
