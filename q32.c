@@ -1,19 +1,20 @@
-// Create a 3-dimensional array and print the address of its elements in increasing order.
+// Write a program to decrypt the string encrypted using encrypt function in problem 37.
 
 #include<stdio.h>
 
 int main(){
-    int arr[2][3][4];
+    char str[50];
 
-    printf("Addresses of elements in increasing order:\n");
+    printf("Enter the encrypted string to decrypt it: ");
+    fgets(str,sizeof(str),stdin);
 
-    for(int i=0;i<2;i++){
-        for(int j=0;j<3;j++){
-            for(int k=0;k<4;k++){
-                printf("Address at arr[%d][%d][%d] is %p .\n",i,j,k,&arr[i][j][k]);
-            }
+    for(int i=0;str[i]!='\0';i++){
+        if(str[i]!='\n'){
+            str[i]--;
         }
     }
+
+    printf("Decrypted String = %s",str);
 
     return 0;
 }

@@ -1,29 +1,22 @@
-// Write a program to count the occurance of a given character in a string.
+// Write a program with a structure representing a complex number.
 
 #include<stdio.h>
 
+typedef struct complex_number{
+    int real;
+    int imagine;
+} complex;
+
 int main(){
-    char str[50]="Hello World";
+    complex c1;
 
-    char ch;
+    printf("Enter the value of real number : ");
+    scanf("%d",&c1.real);
 
-    printf("%s",str);
+    printf("Enter the value of imaginary number : ");
+    scanf("%d",&c1.imagine);
 
-    printf("\nEnter the particular character to count its occurance in the string: ");
-    scanf("%c",&ch);
-
-    int count=0;
-
-    int i = 0;
-
-    while(str[i]!='\0'){
-        if(str[i]==ch){
-            count++;
-        }
-        i++;
-    }
-
-    printf("The number of occurance of \"%c\" in \"%s\" is %d.",ch,str,count);
+    printf("The complex number is : %d + %di",c1.real , c1.imagine);
 
     return 0;
 }

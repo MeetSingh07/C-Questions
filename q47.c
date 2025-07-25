@@ -1,27 +1,29 @@
-// Write a program to read three integers from a file.
+// Write a program to modify a file containing an integer to double its value.
 
 #include <stdio.h>
 
 int main()
 {
-    FILE *ptr;
+    int num;
 
-    ptr = fopen("test.txt", "r");
-
-    int num1 , num2 , num3;
-
+    FILE *ptr = fopen("test4.txt", "r");
+    
     if (ptr == NULL)
     {
-        printf("File does not exist!!!");
-    }
-    else
-    {
-        
-            fscanf(ptr , "%d %d %d" , &num1,&num2,&num3);
-            printf("Numbers are %d %d %d",num1,num2,num3);
-
-            fclose(ptr);
+        printf("File does not exist.");
     }
     
+    fscanf(ptr, "%d", &num);
+    fclose(ptr);
+    
+    num *= 2;
+    
+    ptr = fopen("test4.txt", "w");
+    fprintf(ptr, "%d", num);
+
+    printf("Value updated successfully.");
+
+    fclose(ptr);
+
     return 0;
 }

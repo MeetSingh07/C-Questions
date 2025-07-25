@@ -1,34 +1,20 @@
-// Write a program to find greatest of four numbers entererd by the user.
+// Write a function to convert celsius to fahrenheit.
 
 #include<stdio.h>
 
+float celsius_to_fahrenheit(float celsius);
+
 int main(){
-    int n1 , n2 , n3 ,n4;
+    float celsius;
 
-    printf("Enter 1st number: ");
-    scanf("%d",&n1);
+    printf("Enter the temperature in celsius: ");
+    scanf("%f",&celsius);
 
-    printf("Enter 2nd number: ");
-    scanf("%d",&n2);
-
-    printf("Enter 3rd number: ");
-    scanf("%d",&n3);
-
-    printf("Enter 4th number: ");
-    scanf("%d",&n4);
-
-    if(n1>n2 && n1>n3 && n1>n4){
-        printf("%d is greater.",n1);
-    }
-    else if(n2>n1 && n2>n3 && n2>n4){
-        printf("%d is greater.",n2);
-    }
-    else if(n3>n1 && n3>n2 && n3>n4){
-        printf("%d is greater.",n3);
-    }
-    else{
-        printf("%d is greater.",n4);
-    }
+    printf("Temperature in fahrenheit is %.2f",celsius_to_fahrenheit(celsius));
 
     return 0;
+}
+
+float celsius_to_fahrenheit(float celsius){
+    return ((celsius*1.8)+32);
 }

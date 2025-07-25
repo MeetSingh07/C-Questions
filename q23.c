@@ -1,17 +1,17 @@
-// Write a program having a variable "i". Print the address of "i". Pass this variable to a function and print it's address.
-// Are these addresses same? 
+    // Write a program to convert Celsius ( Centigrade degrees temprature to Fahrenheit )
 
-#include<stdio.h>
+    #include<stdio.h>
 
-void func(int*a);
+    int main(){
+        float celsius;
+        float fahrenheit;
+        
+        printf("Enter the temperature in celsius: ");
+        scanf("%f",&celsius);
 
-int main(){
-    int i=19;
+        fahrenheit=(celsius*1.8)+32;
 
-    printf("The address of i is %p\n",&i);
-    func(&i);
-}
+        printf("\nThe temperature in fahrenheit is %.2f",fahrenheit);
 
-void func(int* a){
-    printf("The address is %p",a);
-}
+        return 0;
+    }

@@ -1,25 +1,20 @@
-// Create an array dynamically capable of storing 5 integers.Now use realloc so that it can now store 10 integers.
+// Write a program to find weather a year entered by the user is a leap year or not.
+// Take year as an input from the user.
 
 #include<stdio.h>
-#include<stdlib.h>
 
 int main(){
-    int size;
-    int *ptr;
-    printf("Enter the size: ");
-    scanf("%d",&size);
-    ptr=(int*)calloc(size,sizeof(int));
-    for(int i=0;i<size;i++){
-        printf("Enter value at %d index: ",i);
-        scanf("%d",&ptr[i]);
+    int year;
+
+    printf("Enter the year: ");
+    scanf("%d",&year);
+
+    if((year%4==0) && ((year%400==0) || (year%100!=0))){
+        printf("Year %d is a leap year.",year);
     }
-    printf("Enter new size: ");
-    scanf("%d",&size);
-    ptr=(int*)realloc(ptr,size*sizeof(int));
-    for(int i=0;i<size;i++){
-        printf("Enter value at %d index: ",i);
-        scanf("%d",&ptr[i]);
+    else{
+        printf("Year %d is not a leap year.",year);
     }
-    free(ptr);
+
     return 0;
 }

@@ -1,26 +1,23 @@
-// Write a program using functions to find average of three numbers.
+// Write a program to change the value of the variable to ten times of its current value.
 
 #include<stdio.h>
 
-int average(int n1 , int n2 , int n3);
+void ten_times(int* n);
 
 int main(){
-    int num1 , num2 , num3;
+    int num;
 
-    printf("Enter the 1st number: ");
-    scanf("%d",&num1);
+    printf("Enter the number: ");
+    scanf("%d",&num);
 
-    printf("Enter the 2nd number: ");
-    scanf("%d",&num2);
+    printf("The value is %d\n",num);
 
-    printf("Enter the 3rd number: ");
-    scanf("%d",&num3);
+    ten_times(&num);
 
-     printf("The average of %d , %d , %d is %d",num1,num2,num3,average(num1,num2,num3));
+    printf("The value is %d",num);
 
-    return 0;
 }
 
-int average(int n1 , int n2 , int n3){
-   return (n1+n2+n3)/3;
+void ten_times(int* n){
+    *n = (*n)*10;
 }

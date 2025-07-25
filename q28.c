@@ -1,21 +1,26 @@
-// Write a program to create an array of 10 integers and store multiplication table of 5 in it.
+// Write your own function of strlen function from <string.h>.
 
 #include<stdio.h>
 
+void stringlen(char str[]);
+
 int main(){
-    int table[10];
-    int n;
+    char str[10];
 
-    printf("Enter the number: ");
-    scanf("%d",&n);
+    printf("Enter a string of maximum 10 characters: ");
+    fgets(str,sizeof(str),stdin);
 
-    for(int i=0;i<10;i++){
-        table[i]=n*(i+1);
-    }
-
-    for(int i=0;i<10;i++){
-        printf("%d X %d = %d\n",n,i+1,table[i]);
-    }
+    stringlen(str);
 
     return 0;
+}
+
+void stringlen(char str[]){
+    int i=0;
+    while(str[i]!='\0'){
+        i++;
+    }
+    int count = i-1;
+
+    printf("The length of the string is : %d ",count);
 }

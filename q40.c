@@ -1,33 +1,35 @@
-// Write a program to check weather a given character is present in a string or not?
+// Create an array of 5 complex numbers created in problem 44 and display them with the help of an display function. 
+// The values must be taken as an input from the user.
 
 #include<stdio.h>
 
+typedef struct complex_number{
+    int real;
+    int imagine;
+}complex;
+
+void display(complex c[]);
+
 int main(){
-    char str[50];
+    complex c[5];
 
-    printf("Enter a string upto 50 characters: ");
-    fgets(str,sizeof(str),stdin);
+    for(int i=0;i<5;i++){
+        printf("Complex Number %d\n",i+1);
 
-    char ch;
+        printf("Enter the value of real number: ");
+        scanf("%d",&c[i].real);
 
-    printf("\nEnter the character to check if it's present in the string or not: ");
-    scanf("%c",&ch);
-
-    int present=0;
-
-    for(int i=0;str[i]!='\0';i++){
-        if(str[i]==ch){
-            present=1;
-            break;
-        }
+        printf("Enter the value of imaginary number: ");
+        scanf("%d",&c[i].imagine);
     }
 
-    if(present==1){
-        printf("Yes, \"%c\" is present in the string.",ch);
-    }
-    else{
-        printf("No, \"%c\" is not present in the string.",ch);
-    }
+    display(c);
 
     return 0;
+}
+
+void display(complex c[]){
+    for(int i=0;i<5;i++){
+    printf("The %d complex number is: %d + %di\n",i+1,c[i].real,c[i].imagine);
+    }
 }

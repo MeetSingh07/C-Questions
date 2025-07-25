@@ -1,33 +1,29 @@
-// Write a program to take string as an input from the user using %c and %s confirm that the strings are equal.
+// Write a program to count the occurance of a given character in a string.
 
 #include<stdio.h>
-#include<string.h>
 
 int main(){
-    char str[6];
-    char str1[6];
+    char str[50]="Hello World";
 
-    printf("Enter the string of 5 characters: ");
-    scanf("%s",str);
+    char ch;
 
     printf("%s",str);
 
-    while(getchar() != '\n');
+    printf("\nEnter the particular character to count its occurance in the string: ");
+    scanf("%c",&ch);
 
-    printf("\nEnter the second string of 5 characters: ");
-    for(int i=0;i<5;i++){
-        scanf("%c",&str1[i]);
-    }
-    str1[5]='\0';
+    int count=0;
 
-    printf("%s",str1);
+    int i = 0;
 
-    if(strcmp(str,str1)==0){
-        printf("The string is equal.");
+    while(str[i]!='\0'){
+        if(str[i]==ch){
+            count++;
+        }
+        i++;
     }
-    else{
-        printf("The string is not equal.");
-    }
+
+    printf("The number of occurance of \"%c\" in \"%s\" is %d.",ch,str,count);
 
     return 0;
 }

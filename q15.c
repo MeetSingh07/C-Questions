@@ -1,26 +1,13 @@
-// Write a program to find the factorial of a given number using a for loop.
+// Write a program to print the address of a variable. Use this address to get the value of the variable.
 
 #include<stdio.h>
 
 int main(){
-    int num,fact=1;
+    int i=19;
+    int* j=&i;
 
-    printf("Enter the number to find it's factorial: ");
-    scanf("%d",&num);
-
-    if(num<0){
-        printf("Please enter a valid number.");
-    }
-    else if(num==0){
-        printf("Factorial is 1.");
-    }
-    else{
-        for(int i=1;i<=num;i++){
-        fact*=i;
-    }
-    }
-
-    printf("Factorial of %d  is %d",num,fact);
-
+    printf("The address of i is %p\n",&i);
+    printf("The value at address of i is %d\n",*(&i));
+    printf("The value at address of i is %d\n",*j);
     return 0;
 }

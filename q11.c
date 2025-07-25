@@ -1,16 +1,23 @@
-// Write a program to print multiplication table of a given number n.
+// Write a program using recursion to calculate nth element of Fibonacci series.
 
 #include<stdio.h>
+
+int fib(int n);
 
 int main(){
     int n;
 
-    printf("Enter the number to get it's multiplication table: ");
+    printf("Enter the value of n to find the nth value of fibonacci series: ");
     scanf("%d",&n);
 
-    for(int i=1;i<=10;i++){
-        printf("%d X %d = %d\n",n,i,n*i);
-    }
+    printf("The value of fibonacci series at %d is %d",n,fib(n));
 
-    return 0;
+}
+
+int fib(int n){
+    if(n==1 || n==2){
+        return n-1;
+    }   
+
+    return fib(n-1)+fib(n-2);
 }

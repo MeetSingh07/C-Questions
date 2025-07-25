@@ -1,22 +1,32 @@
-// Write a program with a structure representing a complex number.
+// Write a program to read a text file character by character and write it's content twice in separate file.
 
-#include<stdio.h>
+#include <stdio.h>
 
-typedef struct complex_number{
-    int real;
-    int imagine;
-} complex;
+int main()
+{
+    int ch;
 
-int main(){
-    complex c1;
+    FILE *ptr;
+    ptr = fopen("input.txt", "r");
+    FILE *ptr1;
+    ptr1=fopen("output.txt","w");
 
-    printf("Enter the value of real number : ");
-    scanf("%d",&c1.real);
+    if (ptr == NULL)
+    {
+        printf("File does not exist.");
+    }
+    else
+    {
+        while ((ch=fgetc(ptr))!=EOF)
+        {
+            printf("%c", ch);
+            fputc(ch,ptr1);
+            fputc(ch,ptr1);
+        }
+    }
 
-    printf("Enter the value of imaginary number : ");
-    scanf("%d",&c1.imagine);
-
-    printf("The complex number is : %d + %di",c1.real , c1.imagine);
+    fclose(ptr);
+    fclose(ptr1);
 
     return 0;
 }

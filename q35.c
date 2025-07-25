@@ -1,39 +1,33 @@
-// Write a function slice to slice a string. It should change the original string such that it is now the sliced string.
-// Take 'm' and 'n' as the start and ending position for slice.
+// Write a program to check weather a given character is present in a string or not?
 
 #include<stdio.h>
 
-void slice(char str[] , int m , int n);
-
 int main(){
-    char str[50]="HelloWorld";
+    char str[50];
 
-    int m , n;
+    printf("Enter a string upto 50 characters: ");
+    fgets(str,sizeof(str),stdin);
 
-    printf("%s",str);
+    char ch;
 
-    printf("\nEnter the start and ending index to slice the above string:\n");
-    printf("Starting index: ");
-    scanf("%d",&m);
-    printf("Ending index: ");
-    scanf("%d",&n);
+    printf("\nEnter the character to check if it's present in the string or not: ");
+    scanf("%c",&ch);
 
-    slice(str , m , n);
+    int present=0;
 
-    printf("Sliced string : %s",str);
-
-    return 0;
-}
-
-void slice(char str[] , int m , int n){
-    int i=0;
-
-    while(m<=n && str[m] != '\0'){
-        str[i]=str[m];
-        i++;
-        m++;
+    for(int i=0;str[i]!='\0';i++){
+        if(str[i]==ch){
+            present=1;
+            break;
+        }
     }
 
-    str[i]='\0';
+    if(present==1){
+        printf("Yes, \"%c\" is present in the string.",ch);
+    }
+    else{
+        printf("No, \"%c\" is not present in the string.",ch);
+    }
 
+    return 0;
 }

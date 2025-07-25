@@ -1,33 +1,28 @@
-// Write a program containing functions which counts the number of positive integers in an array.
+// Write your own function of strcpy function from <string.h>
 
 #include<stdio.h>
 
-void printarray(int arr[],int size);
-void count(int arr[],int size);
-int main(){
-    int arr[5]={1,2,-3,4,-5};
+void stringcpy(char target[] , char source[]);
 
-    printarray(arr,5);
-    printf("\n");
-    count(arr,5);
+int main(){
+    char str1[50]="Hello";
+    char str2[50]="World";
+
+    stringcpy(str2 , str1);
+
+    printf("%s %s",str1 , str2);
 
     return 0;
 }
 
-void printarray(int arr[],int size){
-    for(int i=0;i<size;i++){
-        printf("%d ",arr[i]);
-    }
-}
+void stringcpy(char target[] , char source[]){
+    int i=0;
 
-void count(int arr[],int size){
-    int count=0;
-    
-    for(int i=0;i<size;i++){
-        if(arr[i]>=0){
-            count++;
-        }
+    while(source[i]!='\0'){
+        target[i]=source[i];
+        i++;
     }
 
-    printf("There are %d positive integers in the array.",count);
+    target[i]='\0';
+
 }

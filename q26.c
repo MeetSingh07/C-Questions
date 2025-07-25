@@ -1,34 +1,19 @@
-// Write a program using a function which calculates the sum and average of two numbers.
-// Use pointers and print the values of sum and average in main().
+// Create a 3-dimensional array and print the address of its elements in increasing order.
 
 #include<stdio.h>
 
-void Sum(int n1 , int n2 , int* sum);
-void Avg(int n1 , int n2 , int* avg);
-
 int main(){
-    int num1 , num2 , sum=0 , avg=0;
+    int arr[2][3][4];
 
-    printf("Enter the number 1: ");
-    scanf("%d",&num1);
+    printf("Addresses of elements in increasing order:\n");
 
-    printf("Enter the number 2: ");
-    scanf("%d",&num2);
-
-    Sum(num1,num2,&sum);
-
-    Avg(num1,num2,&avg);
-
-    printf("The sum of %d and %d is %d\n",num1,num2,sum);
-    printf("The average of %d and %d is %d\n",num1,num2,avg);
+    for(int i=0;i<2;i++){
+        for(int j=0;j<3;j++){
+            for(int k=0;k<4;k++){
+                printf("Address at arr[%d][%d][%d] is %p .\n",i,j,k,&arr[i][j][k]);
+            }
+        }
+    }
 
     return 0;
-}
-
-void Sum(int n1 , int n2 , int* sum){
-    *sum=n1+n2;
-}
-
-void Avg(int n1 , int n2 , int* avg){
-    *avg=(n1 + n2)/2;
 }

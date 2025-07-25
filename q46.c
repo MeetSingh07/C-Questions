@@ -1,30 +1,40 @@
-// Create a structure representing a bank account of a customer.
+// Take name and salary of two employees as input from the user and write them to a text file in the following format:
+// i. Name1 , salary
+// ii. Name2 , salary
 
 #include<stdio.h>
-#include<string.h>
-
-typedef struct BankAccount{
-    int   acc_num;
-    char  name[50];
-    float balance;
-}bank;
 
 int main(){
-    bank c1;
+    int salary1 , salary2;
+    char name1[50] , name2[50];
 
-    printf("Enter the account number: ");
-    scanf("%d",&c1.acc_num);
+    FILE *ptr=fopen("test3.txt","w");
 
-    while(getchar() != '\n');  // To clear buffer
+    if(ptr == NULL){
+        printf("File does not exist.");
+    }
 
-    printf("Enter the account holder name: ");
-    fgets(c1.name,sizeof(c1.name),stdin);
-    c1.name[strcspn(c1.name,"\n")]='\0';  // Remove new line character from name
+    printf("Enter the name of the 1st employee: ");
+    scanf("%s",name1);
+    printf("Enter the salary of the 1st employee: ");
+    scanf("%d",&salary1);
 
-    printf("Enter the account balance: ");
-    scanf("%f",&c1.balance);
+    printf("Enter the name of 2nd employee: ");
+    scanf("%s",name2);
+    printf("Enter the salary of 2nd employee: ");
+    scanf("%d",&salary2);
 
-    printf("The account number is : %d \n The account holder name is %s \n The account balance is %.2f \n",c1.acc_num,c1.name,c1.balance);
+    fprintf(ptr,"%s",name1);
+    fprintf(ptr,"%s"," , ");
+    fprintf(ptr,"%d",salary1);
+    
+    fprintf(ptr,"%c",'\n');
+
+    fprintf(ptr,"%s",name2);
+    fprintf(ptr,"%s"," , ");
+    fprintf(ptr,"%d",salary2);
+    
+    fclose(ptr);
 
     return 0;
 }

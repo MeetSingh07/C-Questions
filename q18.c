@@ -1,20 +1,17 @@
-// Write a function to convert celsius to fahrenheit.
+// Write a function and pass the value by reference.
 
 #include<stdio.h>
 
-float celsius_to_fahrenheit(float celsius);
+void sum(int* n1 , int* n2);
 
 int main(){
-    float celsius;
+    int n1 = 5 , n2 = 10;
 
-    printf("Enter the temperature in celsius: ");
-    scanf("%f",&celsius);
-
-    printf("Temperature in fahrenheit is %.2f",celsius_to_fahrenheit(celsius));
+    sum(&n1,&n2);
 
     return 0;
 }
 
-float celsius_to_fahrenheit(float celsius){
-    return ((celsius*1.8)+32);
+void sum(int* n1, int* n2){
+    printf("The sum is %d ",*n1+*n2);
 }

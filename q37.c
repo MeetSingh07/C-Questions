@@ -1,20 +1,24 @@
-// Write a program to encrypt a string by adding one to the ascii value of it's characters.
+// Write a function sum vector which returns the sum of two vectors passed to it. The vectors must be two-dimensional.
 
 #include<stdio.h>
 
+struct vectors{
+    int i;
+    int j;
+};
+
+struct vectors sumvector(struct vectors v1 , struct vectors v2);
+
 int main(){
-    char str[50];
- 
-    printf("Enter a string upto 50 characters max.: ");
-    fgets(str,sizeof(str),stdin);
+    struct vectors v1 = {1,2} , v2 = {5,6};
 
-    for(int i=0;str[i]!='\0';i++){
-        if(str[i]!='\n'){
-            str[i]++;
-        }
-    }
-
-    printf("Encrypted String = %s",str);
+    sumvector(v1 , v2);
 
     return 0;
 }
+struct vectors sumvector(struct vectors v1 , struct vectors v2){
+    struct vectors v3 = {v1.i+v2.i,v1.j+v2.j};
+    printf("The sum of vector 1 and 2 is %di + %dj",v3.i,v3.j);
+}
+
+

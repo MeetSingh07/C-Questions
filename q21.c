@@ -1,31 +1,21 @@
-// Write a program using function to print the following pattern (first n lines).
+// Write a program to create an array of 10 integers and store multiplication table of 5 in it.
 
-// *
+#include<stdio.h>
 
-// * * *
-
-// * * * * *
-
-#include <stdio.h>
-
-void star(int n);
-
-int main() {
+int main(){
+    int table[10];
     int n;
 
-    printf("Enter the value of n: ");
-    scanf("%d", &n);
+    printf("Enter the number: ");
+    scanf("%d",&n);
 
-    star(n);
+    for(int i=0;i<10;i++){
+        table[i]=n*(i+1);
+    }
+
+    for(int i=0;i<10;i++){
+        printf("%d X %d = %d\n",n,i+1,table[i]);
+    }
 
     return 0;
-}
-
-void star(int n) {
-    for(int i = 1; i <= n; i++) {
-        for(int j = 1; j <= (2 * i - 1); j++) {
-            printf("* ");
-        }
-        printf("\n");
-    }
 }

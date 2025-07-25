@@ -1,31 +1,17 @@
-// Write a program to check weather a given number is prime or not using loops.
+// Write a program having a variable "i". Print the address of "i". Pass this variable to a function and print it's address.
+// Are these addresses same? 
 
 #include<stdio.h>
 
+void func(int*a);
+
 int main(){
-    int num,prime=1;
+    int i=19;
 
-    printf("Enter the number: ");
-    scanf("%d",&num);
-
-    if(num<=1){
-        prime=0;
-    }
-    else{
-    for(int i=2;i<num;i++){
-        if(num%i==0){
-            prime=0;
-            break;
-        }
-    }
+    printf("The address of i is %p\n",&i);
+    func(&i);
 }
 
-    if(prime){
-        printf("The entered number is a prime number.");
-    }
-    else{
-        printf("The entered number is not a prime number.");
-    }
-
-    return 0;
+void func(int* a){
+    printf("The address is %p",a);
 }

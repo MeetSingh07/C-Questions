@@ -1,27 +1,22 @@
-// Create an array of multiplication number of 7 upto 10.
-// Use realloc to make it store 15 number.
+    // Write a program to determine weather a character entererd by the user is lowercase or not?
 
-#include<stdio.h>
-#include<stdlib.h>
+    #include<stdio.h>
 
-int main(){
-    int num,size;
-    printf("Enter the number to get its multiplication number: ");
-    scanf("%d",&num);
-    printf("\nEnter the size: ");
-    scanf("%d",&size);
-    int *ptr=(int*)malloc(size*sizeof(int));
-    for(int i=0;i<size;i++){
-        ptr[i]=num*(i+1);
-        printf("%d X %d = %d\n",num,i+1,num*(i+1));
-    } 
-    printf("Enter the new size: \n");
-    scanf("%d",&size);
-    ptr=(int*)realloc(ptr,size*sizeof(int));
-    for(int i=0;i<size;i++){
-        ptr[i]=num*(i+1);
-        printf("%d X %d = %d\n",num,i+1,num*(i+1));
-    } 
-    free(ptr);
-    return 0;
-}
+    int main(){
+        char ch;
+
+        printf("Enter a character (A-Z): ");
+        scanf("%c",&ch);
+
+        if(ch>='a' && ch<='z'){
+            printf("%c is lowercase.",ch);
+        }
+        else if(ch>='A' && ch<='Z'){
+            printf("%c is uppercase.",ch);
+        }
+        else{
+            printf("Enter a valid character.");
+        }
+
+        return 0;
+    }

@@ -1,32 +1,25 @@
-// Write a program to read a text file character by character and write it's content twice in separate file.
+// Create an array dynamically capable of storing 5 integers.Now use realloc so that it can now store 10 integers.
 
-#include <stdio.h>
+#include<stdio.h>
+#include<stdlib.h>
 
-int main()
-{
-    int ch;
-
-    FILE *ptr;
-    ptr = fopen("input.txt", "r");
-    FILE *ptr1;
-    ptr1=fopen("output.txt","w");
-
-    if (ptr == NULL)
-    {
-        printf("File does not exist.");
+int main(){
+    int size;
+    int *ptr;
+    printf("Enter the size: ");
+    scanf("%d",&size);
+    ptr=(int*)calloc(size,sizeof(int));
+    for(int i=0;i<size;i++){
+        printf("Enter value at %d index: ",i);
+        scanf("%d",&ptr[i]);
     }
-    else
-    {
-        while ((ch=fgetc(ptr))!=EOF)
-        {
-            printf("%c", ch);
-            fputc(ch,ptr1);
-            fputc(ch,ptr1);
-        }
+    printf("Enter new size: ");
+    scanf("%d",&size);
+    ptr=(int*)realloc(ptr,size*sizeof(int));
+    for(int i=0;i<size;i++){
+        printf("Enter value at %d index: ",i);
+        scanf("%d",&ptr[i]);
     }
-
-    fclose(ptr);
-    fclose(ptr1);
-
+    free(ptr);
     return 0;
 }

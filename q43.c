@@ -1,23 +1,23 @@
-// Write a program to illustrate the use of arrow -> operator in C.
+// Write a program to generate multiplication table of a given number in text format.
+// Make sure that the file is readable and well formated.
 
 #include<stdio.h>
-#include<string.h>
-
-struct book{
-    char title[50];
-    char author[50];
-    float price;
-};
 
 int main(){
-    struct book b1;
-    struct book *ptr=&b1;
+    int num;
 
-    strcpy(ptr->title,"Harry Potter");
-    strcpy(ptr->author,"William Douglas");
-    ptr->price=199.99;
+    printf("Enter the number to print it's multiplication number: ");
+    scanf("%d",&num);
 
-    printf("The title is %s , author is %s and price is %.2f",ptr->title,ptr->author,ptr->price);
+    FILE *ptr;
+
+    ptr = fopen("test2.txt","w");
+
+    for(int i=1;i<11;i++){
+        fprintf(ptr,"%d X %d = %d\n",num,i,num*i);
+    }
+
+    fclose(ptr);
 
     return 0;
 }

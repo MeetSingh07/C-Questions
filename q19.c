@@ -1,23 +1,34 @@
-// Write a program using recursion to calculate nth element of Fibonacci series.
+// Write a program using a function which calculates the sum and average of two numbers.
+// Use pointers and print the values of sum and average in main().
 
 #include<stdio.h>
 
-int fib(int n);
+void Sum(int n1 , int n2 , int* sum);
+void Avg(int n1 , int n2 , int* avg);
 
 int main(){
-    int n;
+    int num1 , num2 , sum=0 , avg=0;
 
-    printf("Enter the value of n to find the nth value of fibonacci series: ");
-    scanf("%d",&n);
+    printf("Enter the number 1: ");
+    scanf("%d",&num1);
 
-    printf("The value of fibonacci series at %d is %d",n,fib(n));
+    printf("Enter the number 2: ");
+    scanf("%d",&num2);
 
+    Sum(num1,num2,&sum);
+
+    Avg(num1,num2,&avg);
+
+    printf("The sum of %d and %d is %d\n",num1,num2,sum);
+    printf("The average of %d and %d is %d\n",num1,num2,avg);
+
+    return 0;
 }
 
-int fib(int n){
-    if(n==1 || n==2){
-        return n-1;
-    }   
+void Sum(int n1 , int n2 , int* sum){
+    *sum=n1+n2;
+}
 
-    return fib(n-1)+fib(n-2);
+void Avg(int n1 , int n2 , int* avg){
+    *avg=(n1 + n2)/2;
 }

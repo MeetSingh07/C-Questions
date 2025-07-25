@@ -1,23 +1,19 @@
-// Write a program to generate multiplication table of a given number in text format.
-// Make sure that the file is readable and well formated.
+// Write a program to dynamically create an array of size 6 capable of storing 6 integers.
 
 #include<stdio.h>
+#include<stdlib.h>
 
 int main(){
-    int num;
-
-    printf("Enter the number to print it's multiplication number: ");
-    scanf("%d",&num);
-
-    FILE *ptr;
-
-    ptr = fopen("test2.txt","w");
-
-    for(int i=1;i<11;i++){
-        fprintf(ptr,"%d X %d = %d\n",num,i,num*i);
+    int size;
+    printf("Enter the size of the array: ");
+    scanf("%d",&size);
+    int *ptr;
+    ptr=(int*)malloc(size*sizeof(int));
+    // ptr=(int*)calloc(size,sizeof(int));
+    for(int i=0;i<size;i++){
+        printf("Enter value at %d index: ",i);
+        scanf("%d",&ptr[i]);
     }
-
-    fclose(ptr);
-
+    free(ptr);
     return 0;
 }

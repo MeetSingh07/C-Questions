@@ -1,20 +1,23 @@
-// Write a program to decrypt the string encrypted using encrypt function in problem 37.
+// Write a program to illustrate the use of arrow -> operator in C.
 
 #include<stdio.h>
+#include<string.h>
+
+struct book{
+    char title[50];
+    char author[50];
+    float price;
+};
 
 int main(){
-    char str[50];
+    struct book b1;
+    struct book *ptr=&b1;
 
-    printf("Enter the encrypted string to decrypt it: ");
-    fgets(str,sizeof(str),stdin);
+    strcpy(ptr->title,"Harry Potter");
+    strcpy(ptr->author,"William Douglas");
+    ptr->price=199.99;
 
-    for(int i=0;str[i]!='\0';i++){
-        if(str[i]!='\n'){
-            str[i]--;
-        }
-    }
-
-    printf("Decrypted String = %s",str);
+    printf("The title is %s , author is %s and price is %.2f",ptr->title,ptr->author,ptr->price);
 
     return 0;
 }

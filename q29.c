@@ -1,32 +1,39 @@
-// Write a program containing a function which reverses the array passed to it.
+// Write a function slice to slice a string. It should change the original string such that it is now the sliced string.
+// Take 'm' and 'n' as the start and ending position for slice.
 
 #include<stdio.h>
 
-void reverse(int arr[],int size);
+void slice(char str[] , int m , int n);
 
 int main(){
-    int arr[5];
+    char str[50]="HelloWorld";
 
-    for(int i=0;i<5;i++){
-        printf("Enter element at %d index: ",i);
-        scanf("%d",&arr[i]);
-    }
+    int m , n;
 
-    reverse(arr,5);
+    printf("%s",str);
 
-    for(int i=0;i<5;i++){
-        printf("%d ",arr[i]);
-    }
+    printf("\nEnter the start and ending index to slice the above string:\n");
+    printf("Starting index: ");
+    scanf("%d",&m);
+    printf("Ending index: ");
+    scanf("%d",&n);
+
+    slice(str , m , n);
+
+    printf("Sliced string : %s",str);
 
     return 0;
 }
 
-void reverse(int arr[],int size){
-    int temp;
-    
-    for(int i=0;i<size/2;i++){
-        temp=arr[i];
-        arr[i]=arr[size-1-i];
-        arr[size-1-i]=temp;
+void slice(char str[] , int m , int n){
+    int i=0;
+
+    while(m<=n && str[m] != '\0'){
+        str[i]=str[m];
+        i++;
+        m++;
     }
+
+    str[i]='\0';
+
 }

@@ -1,26 +1,22 @@
-// Write your own function of strlen function from <string.h>.
+// Write a program to calculate simple interest for a set of values representing principal , number of years and rate of interest.
 
 #include<stdio.h>
 
-void stringlen(char str[]);
-
 int main(){
-    char str[10];
+    float principal,rate,time,si;
 
-    printf("Enter a string of maximum 10 characters: ");
-    fgets(str,sizeof(str),stdin);
+    printf("Enter the principal: ");
+    scanf("%f",&principal);
 
-    stringlen(str);
+    printf("\nEnter the rate: ");
+    scanf("%f",&rate);
+
+    printf("\nEnter the time: ");
+    scanf("%f",&time);
+
+    si=(principal*rate*time)/100;
+
+    printf("\nThe Simple Interest is %.2f",si);
 
     return 0;
-}
-
-void stringlen(char str[]){
-    int i=0;
-    while(str[i]!='\0'){
-        i++;
-    }
-    int count = i-1;
-
-    printf("The length of the string is : %d ",count);
 }
