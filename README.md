@@ -1,6 +1,6 @@
 <h1>C PRACTICE QUESTIONS WITH SOLUTIONS</h1>
 <br>
-This <b>repository</b> contains 50+ C programming questions with solutions solved while learning C language.You can practice these questions for practice and also match your code.
+This <b>repository</b> contains 50+ C programming questions with solutions solved while learning C language.You can use these questions for practice and also match your code.
 These questions covers basic C programming concepts.
 <br>
 <h3>Concepts Covered</h3>
